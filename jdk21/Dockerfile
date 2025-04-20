@@ -1,4 +1,4 @@
-FROM eclipse-temurin:21-jdk-alpine
+FROM bellsoft/liberica-openjdk-alpine-musl:21
 
 CMD ["groovysh"]
 
@@ -19,7 +19,7 @@ VOLUME /home/groovy/.groovy/grapes
 
 WORKDIR /home/groovy
 
-ENV GROOVY_VERSION=4.0.25
+ENV GROOVY_VERSION=4.0.26
 RUN set -o errexit -o nounset \
     && echo "Installing build dependencies" \
     && apk add --no-cache --virtual .build-deps \
