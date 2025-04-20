@@ -17,21 +17,21 @@ Note that if you are mounting a volume and the uid running Docker is not _1000_,
 
 ### Starting Groovysh
 
-`docker run -it --rm groovy:latest`
+`docker run -it --rm groovy-liberica:jdk21`
 
 ### Running a Groovy script
 
 #### Bash/Zsh
 
-`docker run --rm -v "$PWD":/home/groovy/scripts -w /home/groovy/scripts groovy:latest groovy <script> <script-args>`
+`docker run --rm -v "$PWD":/home/groovy/scripts -w /home/groovy/scripts groovy-liberica:jdk21 groovy <script> <script-args>`
 
 #### PowerShell
 
-`docker run --rm -v "${pwd}:/home/groovy/scripts" -w /home/groovy/scripts groovy:latest groovy <script> <script-args>`
+`docker run --rm -v "${pwd}:/home/groovy/scripts" -w /home/groovy/scripts groovy-liberica:jdk21 groovy <script> <script-args>`
 
 #### Windows CMD
 
-`docker run --rm -v "%cd%:/home/groovy/scripts" -w /home/groovy/scripts groovy:latest groovy <script> <script-args>`
+`docker run --rm -v "%cd%:/home/groovy/scripts" -w /home/groovy/scripts groovy-liberica:jdk21 groovy <script> <script-args>`
 
 ### Reusing the Grapes cache
 
@@ -39,7 +39,7 @@ The local Grapes cache can be reused across containers by creating a volume and 
 
 ```
 docker volume create --name grapes-cache
-docker run --rm -it -v grapes-cache:/home/groovy/.groovy/grapes groovy:latest
+docker run --rm -it -v grapes-cache:/home/groovy/.groovy/grapes groovy-liberica:jdk21
 ```
 
 Note when running as another user (other than _groovy_ or _root_), you will need to tell Groovy what home to use for Grapes with `-D user.home=/home/groovy`.
